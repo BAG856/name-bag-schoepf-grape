@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#28483d">
+  <meta name="description" content="Entwurf der Website der Hausarztpraxis Schöpf &amp; Grape in Franzburg.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hausarztpraxis Schöpf &amp; Grape · Franzburg | Entwurf</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --forest: #28483d;
+      --forest-deep: #1d362e;
+      --sage: #e5ede5;
+      --sage-strong: #c9d9cb;
+      --cream: #f8f6ef;
+      --paper: #fffefa;
+      --ink: #26362f;
+      --muted: #66746c;
+      --line: #dce3d9;
+      --accent: #bb7049;
+      --shadow: 0 18px 55px rgb(29 54 46 / 8%);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font: 16px/1.65 "Segoe UI", system-ui, sans-serif; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .draft-bar { padding: 8px 18px; background: var(--forest-deep); color: #fff; text-align: center; font-size: .8rem; letter-spacing: .04em; }
+    .draft-bar strong { color: #e8d9b6; }
+    header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgb(248 246 239 / 94%); backdrop-filter: blur(12px); }
+    .nav { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--forest); text-decoration: none; font-weight: 750; line-height: 1.2; }
+    .brand small { display: block; margin-top: 4px; color: var(--muted); font-size: .74rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+    .brand-mark { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--sage-strong); border-radius: 50%; background: var(--sage); }
+    .brand-mark svg { width: 22px; height: 22px; }
+    nav { display: flex; align-items: center; gap: 22px; }
+    nav a { color: var(--forest); text-decoration: none; font-size: .9rem; font-weight: 650; }
+    nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--forest); padding: 8px 12px; font: inherit; font-weight: 650; }
+    .hero { position: relative; overflow: hidden; padding: clamp(64px, 10vw, 126px) 0 82px; background: radial-gradient(ellipse at 80% 12%, rgb(201 217 203 / 66%), transparent 37%), linear-gradient(135deg, #e8eee5 0%, var(--cream) 72%); }
+    .hero::after { position: absolute; top: -160px; right: -120px; width: 440px; height: 440px; border: 1px solid rgb(40 72 61 / 12%); border-radius: 50%; content: ""; pointer-events: none; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr); gap: clamp(40px, 7vw, 90px); align-items: center; }
+    .eyebrow { color: #597664; font-size: .75rem; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 720px; margin: 16px 0 20px; color: var(--forest-deep); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.02; }
+    h1 em { color: #64816e; font-weight: 400; }
+    .lead { max-width: 610px; margin-bottom: 26px; color: #526159; font-size: 1.12rem; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 11px; }
+    .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 9px; padding: 10px 16px; border: 1px solid var(--forest); border-radius: 6px; color: var(--forest); text-decoration: none; font-size: .9rem; font-weight: 700; transition: background .18s ease, color .18s ease; }
+    .button:hover { background: var(--forest); color: #fff; }
+    .button svg { width: 17px; height: 17px; }
+    .hero-note { padding: 27px; border: 1px solid rgb(255 255 255 / 76%); border-radius: 9px; background: rgb(255 254 250 / 83%); box-shadow: var(--shadow); }
+    .hero-note .icon { display: grid; width: 43px; height: 43px; margin-bottom: 18px; place-items: center; border-radius: 50%; background: var(--sage); color: var(--forest); }
+    .hero-note .icon svg { width: 22px; height: 22px; }
+    .hero-note h2 { margin-bottom: 14px; font: 500 1.5rem/1.2 Georgia, serif; color: var(--forest-deep); }
+    .hero-note p { margin-bottom: 0; color: var(--muted); font-size: .94rem; }
+    .hero-note address { margin-top: 15px; color: var(--ink); font-style: normal; font-weight: 650; }
+    .quick-facts { padding: 17px 0; border-block: 1px solid var(--line); background: var(--paper); }
+    .fact-row { display: flex; justify-content: space-between; gap: 24px; }
+    .fact { display: flex; align-items: center; gap: 11px; color: var(--forest); font-size: .92rem; font-weight: 650; }
+    .fact svg { width: 20px; height: 20px; flex: 0 0 auto; color: #718b78; }
+    section.content-section { padding: clamp(58px, 8vw, 94px) 0; }
+    .section-head { max-width: 700px; margin-bottom: 30px; }
+    .section-head h2 { margin: 10px 0 12px; color: var(--forest-deep); font: 500 clamp(2rem, 4vw, 3.1rem)/1.12 Georgia, serif; letter-spacing: -.03em; }
+    .section-head p { margin-bottom: 0; color: var(--muted); }
+    .team-grid, .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .person-card, .service-card, .info-card { border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+    .person-card { display: flex; gap: 18px; align-items: center; padding: 22px; }
+    .avatar { display: grid; width: 58px; height: 58px; flex: 0 0 auto; place-items: center; border: 1px solid var(--sage-strong); border-radius: 50%; background: var(--sage); color: var(--forest); }
+    .avatar svg { width: 28px; height: 28px; }
+    .person-card h3 { margin: 0 0 3px; color: var(--forest-deep); font: 500 1.3rem/1.2 Georgia, serif; }
+    .person-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .person-card .role { margin-bottom: 5px; color: #6b806f; font-size: .72rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+    .service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .service-card { min-height: 150px; padding: 20px; }
+    .service-card svg { width: 25px; height: 25px; margin-bottom: 14px; color: #64816e; }
+    .service-card h3 { margin-bottom: 6px; color: var(--forest-deep); font: 500 1.17rem/1.25 Georgia, serif; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+    .sage-band { background: var(--sage); }
+    .two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(28px, 6vw, 72px); align-items: start; }
+    .hours-panel { padding: 24px; border: 1px solid #d2ded1; border-radius: 8px; background: var(--paper); }
+    .hours-panel h3 { margin-bottom: 15px; color: var(--forest-deep); font: 500 1.45rem/1.2 Georgia, serif; }
+    .hours { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .hours th, .hours td { padding: 10px 7px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .hours th { color: var(--muted); font-size: .78rem; font-weight: 700; }
+    .hours td:first-child { width: 27%; color: var(--forest); font-weight: 700; }
+    .hours tr:last-child td { border-bottom: 0; }
+    .hours-note { margin: 12px 0 0; color: var(--muted); font-size: .8rem; }
+    .list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .list li { display: flex; gap: 12px; align-items: flex-start; }
+    .list svg { width: 20px; height: 20px; flex: 0 0 auto; margin-top: 3px; color: #64816e; }
+    .list strong { display: block; color: var(--forest-deep); }
+    .list span { display: block; color: var(--muted); font-size: .9rem; }
+    .callout { margin-top: 18px; padding: 16px 18px; border-left: 3px solid #8eaa92; border-radius: 0 6px 6px 0; background: #f2f5ef; color: #53645a; font-size: .9rem; }
+    .video-card { display: flex; gap: 22px; align-items: flex-start; padding: 25px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); box-shadow: var(--shadow); }
+    .video-card .avatar { width: 50px; height: 50px; }
+    .video-card h3 { margin: 9px 0 7px; color: var(--forest-deep); font: 500 1.55rem/1.2 Georgia, serif; }
+    .status { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px; border-radius: 99px; background: #f2ecdc; color: #795f32; font-size: .75rem; font-weight: 750; }
+    .status::before { width: 7px; height: 7px; border-radius: 50%; background: #bc9850; content: ""; }
+    .video-card p { margin: 0; color: var(--muted); }
+    .notice-card { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 25px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+    .notice-card h3 { margin: 10px 0 7px; color: var(--forest-deep); font: 500 1.45rem/1.2 Georgia, serif; }
+    .notice-card p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .notice-empty { align-self: center; padding: 16px; border: 1px dashed var(--sage-strong); border-radius: 6px; color: var(--muted); font-size: .88rem; }
+    .notice-empty strong { display: block; margin-bottom: 5px; color: var(--forest); }
+    .contact-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+    .info-card { padding: 24px; }
+    .info-card h3 { margin: 0 0 14px; color: var(--forest-deep); font: 500 1.45rem/1.2 Georgia, serif; }
+    .info-card p { margin-bottom: 9px; color: var(--muted); }
+    .info-card p:last-child { margin-bottom: 0; }
+    .address { color: var(--ink) !important; font-size: 1.05rem; font-weight: 700; }
+    .parking { display: flex; gap: 10px; align-items: center; color: var(--forest) !important; }
+    .parking svg { width: 21px; height: 21px; flex: 0 0 auto; }
+    footer { padding: 26px 0; background: var(--forest-deep); color: #eef0e8; }
+    .footer-row { display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+    footer p { margin: 0; font-size: .84rem; }
+    footer a { color: #eef0e8; font-size: .84rem; }
+    .fineprint { color: #d3ddd3; }
+    @media (max-width: 820px) {
+      .hero-grid, .two-col { grid-template-columns: 1fr; }
+      .hero-note { max-width: 460px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .fact-row { flex-wrap: wrap; justify-content: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .nav { min-height: 66px; }
+      .menu-toggle { display: block; }
+      nav { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; padding: 16px; border-bottom: 1px solid var(--line); background: var(--cream); }
+      nav[data-open="true"] { display: grid; gap: 0; }
+      nav a { padding: 11px max(16px, calc((100vw - 560px) / 2)); }
+      .hero { padding: 60px 0 50px; }
+      .team-grid, .service-grid, .notice-card, .contact-grid { grid-template-columns: 1fr; }
+      .fact-row { display: grid; gap: 12px; }
+      .hours-panel { padding: 18px 15px; }
+      .hours { font-size: .84rem; }
+      .hours th, .hours td { padding: 9px 5px; }
+      .video-card { padding: 19px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="draft-bar"><strong>Website-Entwurf</strong> · Noch nicht veröffentlicht</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#start" aria-label="Hausarztpraxis Schöpf und Grape, Startseite">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8m0-12.8L5.6 18.4"/><circle cx="12" cy="12" r="8.5"/></svg></span>
+        <span>Hausarztpraxis Schöpf &amp; Grape<small>Franzburg · Allgemeinmedizin</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menü</button>
+      <nav id="main-nav" aria-label="Hauptnavigation">
+        <a href="#team">Praxisteam</a><a href="#leistungen">Leistungen</a><a href="#sprechzeiten">Sprechzeiten</a><a href="#aktuelles">Aktuelles</a><a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <main id="start">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Hausärztliche Versorgung in Franzburg</div>
+          <h1>Gut begleitet.<br><em>In jedem Alter.</em></h1>
+          <p class="lead">Wir sind für Sie da – mit hausärztlicher Betreuung, offenen Ohren und einem Blick auf den Menschen als Ganzes.</p>
+          <div class="button-row"><a class="button" href="#sprechzeiten">Sprechzeiten ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button" href="#kontakt">Anfahrt &amp; Kontakt</a></div>
+        </div>
+        <aside class="hero-note">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3v18M3 12h18"/></svg></span>
+          <h2>Ihre Praxis vor Ort</h2>
+          <p>Persönliche hausärztliche Betreuung für Kinder, Erwachsene und ältere Menschen.</p>
+          <address>Grüner Weg 17<br>18461 Franzburg</address>
+        </aside>
+      </div>
+    </section>
+    <div class="quick-facts" aria-label="Wichtige Informationen"><div class="wrap fact-row">
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Akutsprechstunde Mo–Fr · 08–10 Uhr</div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M5 10V6l7-3 7 3v4M5 21V10m14 11V10M3 21h18M9 14h2m2 0h2m-6 3h2m2 0h2"/></svg>Parkplätze an der Praxis</div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8m-8 4h8m-8 4h5"/></svg>E-Rezepte telefonisch bestellen</div>
+    </div></div>
+    <section class="content-section" id="team"><div class="wrap">
+      <div class="section-head"><div class="eyebrow">Menschen in Ihrer Praxis</div><h2>Ein Team, das sich Zeit nimmt.</h2><p>Ärztinnen und NäPAs arbeiten bei uns Hand in Hand. So können wir Sie persönlich und verlässlich begleiten.</p></div>
+      <div class="team-grid">
+        <article class="person-card"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M18 5v5m-2.5-2.5h5"/></svg></span><div><div class="role">Fachärztin für Allgemeinmedizin</div><h3>Annelie Schöpf</h3></div></article>
+        <article class="person-card"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M18 5v5m-2.5-2.5h5"/></svg></span><div><div class="role">Fachärztin für Allgemeinmedizin</div><h3>Kerstin Grape</h3><p>Akupunktur &amp; Chiropraktik</p></div></article>
+        <article class="person-card"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M18 5v5m-2.5-2.5h5"/></svg></span><div><div class="role">NäPA</div><h3>Anja Thurow</h3></div></article>
+        <article class="person-card"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M18 5v5m-2.5-2.5h5"/></svg></span><div><div class="role">NäPA</div><h3>Sandra Buchholz</h3></div></article>
+      </div>
+    </div></section>
+    <section class="content-section sage-band" id="leistungen"><div class="wrap">
+      <div class="section-head"><div class="eyebrow">Medizinisch gut versorgt</div><h2>Leistungen für Ihre Gesundheit.</h2><p>Von Vorsorge bis zur Begleitung bei chronischen Erkrankungen: Wir stimmen die Behandlung auf Ihre Situation ab.</p></div>
+      <div class="service-grid">
+        <article class="service-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg><h3>Hausärztliche Betreuung</h3><p>Für alle Altersgruppen – persönlich und kontinuierlich.</p></article>
+        <article class="service-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v15H4zM8 3v4m8-4v4M4 10h16"/><path d="m9 15 2 2 4-4"/></svg><h3>Vorsorge &amp; Impfungen</h3><p>Vorsorgeuntersuchungen und Impfberatung.</p></article>
+        <article class="service-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6"/><path d="M4 4v16m16-16v16" opacity=".45"/></svg><h3>Diagnostik</h3><p>EKG, Spirometrie und Langzeit-Blutdruckmessung.</p></article>
+        <article class="service-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12c0-4.5 3.4-8 8-8s8 3.5 8 8-3.4 8-8 8-8-3.5-8-8Z"/><path d="M12 4c2.3 2 3.3 4.7 3.3 8s-1 6-3.3 8c-2.3-2-3.3-4.7-3.3-8S9.7 6 12 4Z"/><path d="M5 9h14m-14 6h14"/></svg><h3>Ultraschall</h3><p>Sonografie des Bauchraums und der Schilddrüse.</p></article>
+        <article class="service-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM8 3v6m8-6v6M8 14h8m-8 3h5"/></svg><h3>DMP</h3><p>Strukturierte Begleitung bei chronischen Erkrankungen.</p></article>
+        <article class="service-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 10v10h13V10M9 20v-6h6v6"/><path d="M12 9v4m-2-2h4"/></svg><h3>Hausbesuche</h3><p>Wenn ein Praxisbesuch nicht möglich ist.</p></article>
+        <article class="service-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg><h3>Psychosomatische Grundversorgung</h3><p>Gesundheit mit Körper und Seele im Blick.</p></article>
+        <article class="service-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7c2 0 3-2 4-2s2 2 3 2 2-2 3-2 2 2 4 2M5 17c2 0 3 2 4 2s2-2 3-2 2 2 3-2 2 2 4 2"/></svg><h3>Akupunktur &amp; Chiropraktik</h3><p>Bei Kerstin Grape.</p></article>
+      </div>
+    </div></section>
+    <section class="content-section" id="sprechzeiten"><div class="wrap two-col">
+      <div>
+        <div class="section-head"><div class="eyebrow">Gut zu wissen</div><h2>Wann wir für Sie da sind.</h2><p>Für kurze Anliegen ohne Termin: Unsere Akutsprechstunde findet montags bis freitags von 08 bis 10 Uhr statt.</p></div>
+        <ul class="list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><div><strong>Akutsprechstunde</strong><span>Montag bis Freitag · 08–10 Uhr · ohne Anmeldung</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><div><strong>Kindervorsorge</strong><span>Montag · 15–16 Uhr · bei Kerstin Grape</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><div><strong>Gesundheitskarte</strong><span>Bitte zu Beginn jedes Quartals einmal einlesen lassen.</span></div></li>
+        </ul>
+        <div class="callout">E-Rezepte können telefonisch bestellt werden. Bitte beachten Sie: Hier im Entwurf ist keine Telefonnummer angegeben.</div>
+      </div>
+      <div class="hours-panel">
+        <h3>Sprechzeiten nach Ärztin</h3>
+        <table class="hours"><thead><tr><th>Tag</th><th>Annelie Schöpf</th><th>Kerstin Grape</th></tr></thead><tbody>
+          <tr><td>Montag</td><td>08–12:30</td><td>08–12:30<br>15–18</td></tr>
+          <tr><td>Dienstag</td><td>08–12</td><td>—</td></tr>
+          <tr><td>Mittwoch</td><td>08–10<br>13–15*</td><td>—</td></tr>
+          <tr><td>Donnerstag</td><td>—</td><td>08–11:30<br>13–15</td></tr>
+          <tr><td>Freitag</td><td>08–12</td><td>—</td></tr>
+        </tbody></table>
+        <p class="hours-note">* Geplante Videosprechstunde · derzeit noch in Vorbereitung.</p>
+      </div>
+    </div></section>
+    <section class="content-section sage-band"><div class="wrap two-col">
+      <div class="section-head"><div class="eyebrow">Digital in Vorbereitung</div><h2>Videosprechstunde.</h2><p>Wir planen ein zusätzliches Gesprächsangebot für die Videosprechstunde.</p></div>
+      <article class="video-card"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg></span><div><span class="status">In Vorbereitung</span><h3>Geplant: mittwochs 13–15 Uhr</h3><p>Das Angebot ist noch nicht buchbar. Weitere Informationen folgen, sobald die Videosprechstunde eingerichtet ist.</p></div></article>
+    </div></section>
+    <section class="content-section" id="aktuelles"><div class="wrap">
+      <div class="section-head"><div class="eyebrow">Aktuelles aus der Praxis</div><h2>Urlaub &amp; Vertretung.</h2></div>
+      <div class="notice-card">
+        <div><span class="status">Hinweise</span><h3>Vorübergehende Änderungen</h3><p>Hier finden Sie Informationen zu Praxisschließzeiten und zur jeweiligen Vertretung.</p></div>
+        <div class="notice-empty"><strong>Derzeit keine Hinweise eingetragen.</strong>Die Angaben in diesem Bereich können bei Bedarf durch die Praxis ergänzt werden.</div>
+      </div>
+    </div></section>
+    <section class="content-section sage-band" id="kontakt"><div class="wrap">
+      <div class="section-head"><div class="eyebrow">Wir freuen uns auf Sie</div><h2>So finden Sie zu uns.</h2></div>
+      <div class="contact-grid">
+        <article class="info-card"><h3>Praxisadresse</h3><p class="address">Hausarztpraxis Schöpf &amp; Grape<br>Grüner Weg 17<br>18461 Franzburg</p><p class="parking"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h7a5 5 0 0 1 0 10H6"/></svg>Parkplätze an der Praxis</p></article>
+        <article class="info-card"><h3>Besuchsplanung</h3><p>Für reguläre Termine wenden Sie sich bitte telefonisch an die Praxis.</p><p>Die Telefonnummer wird ergänzt, sobald die Praxis sie für die Website bestätigt hat.</p><p>Akute Anliegen: Akutsprechstunde werktags 08–10 Uhr ohne Anmeldung.</p></article>
+      </div>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-row"><p>Hausarztpraxis Schöpf &amp; Grape · Grüner Weg 17 · 18461 Franzburg</p><p class="fineprint">Entwurf zur gemeinsamen Prüfung · Rechtliche Angaben vor Veröffentlichung ergänzen und prüfen.</p></div></footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#main-nav');
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      navigation.dataset.open = String(!isOpen);
+    });
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        navigation.dataset.open = 'false';
+      }
+    });
+  </script>
+</body>
+</html>
