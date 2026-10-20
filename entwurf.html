@@ -58,7 +58,7 @@ let periods=fallback.zeitraeume;
 const asDate=s=>{const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d,12)};
 const iso=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,"0"),String(d.getDate()).padStart(2,"0")].join("-");
 const fmt=s=>new Intl.DateTimeFormat("de-DE",{day:"2-digit",month:"2-digit",year:"numeric"}).format(asDate(s));
-const representations='<div class="reps"><div class="rep"><h3>Praxis Dipl.-Med. Roland Rahden</h3><p>Ernst-Thälmann-Straße 51<br>18461 Franzburg</p><a href="tel:+4938322857">038322 857</a></div><div class="rep"><h3>Praxis Brümmer-Noster</h3><p>Franzburg</p><a href="tel:+4938322755">038322 755</a><p class="mini">Straßenadresse vor Veröffentlichung bestätigen.</p></div></div>';
+const representations='<div class="reps"><div class="rep"><h3>Praxis Dipl.-Med. Roland Rahden</h3><p>Ernst-Thälmann-Straße 51<br>18461 Franzburg</p><a href="tel:+4938322857">038322 857</a></div><div class="rep"><h3>Praxis Brümmer-Noster</h3><p>Garthofstraße 11<br>18461 Franzburg</p><a href="tel:+4938322755">038322 755</a></div></div>';
 function show(){
 const ts=asDate(document.getElementById("testdate").value||iso(new Date())).getTime();
 const next=periods.filter(p=>{let min=asDate(p.von);min.setDate(min.getDate()-14);return ts>=min.getTime()&&ts<=asDate(p.bis).getTime()}).sort((a,b)=>a.von.localeCompare(b.von));
